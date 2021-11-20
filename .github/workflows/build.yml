@@ -34,7 +34,7 @@ jobs:
       - name: West Zephyr export
         run: west zephyr-export
       - name: West Build (Corne-ish Zen Left)
-        run: west build -s zmk/app -b corne-ish_zen_left -- -DZMK_CONFIG="${GITHUB_WORKSPACE}/config" -DCONFIG_LOG=y -DCONFIG_ZMK_USB_LOGGING=y -DCONFIG_ZMK_LOG_LEVEL_DBG=y -DCONFIG_LOG_BUFFER_SIZE=100000 -DCONFIG_LOG_STRDUP_BUF_COUNT=1000 -DCONFIG_BT_DEBUG_LOG=y -DCONFIG_BT_DEBUG_CONN=y
+        run: west build -s zmk/app -b corne-ish_zen_left -- -DZMK_CONFIG="${GITHUB_WORKSPACE}/config" -DCONFIG_LOG=y -DCONFIG_ZMK_USB_LOGGING=y -DCONFIG_ZMK_LOG_LEVEL_DBG=y -DCONFIG_LOG_BUFFER_SIZE=32767 -DCONFIG_LOG_STRDUP_BUF_COUNT=1000 -DCONFIG_BT_DEBUG_LOG=y -DCONFIG_BT_DEBUG_CONN=y
       - name: Corne-ish Zen DTS File
         if: ${{ always() }}
         run: cat -n build/zephyr/corne-ish_zen_left.dts.pre.tmp
